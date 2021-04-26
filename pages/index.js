@@ -33,6 +33,7 @@ export default function Home() {
 function showQ(e){
   e.preventDefault();
   console.log('testing');
+  console.log(<Radio />);
 
   return(
   
