@@ -7,14 +7,14 @@ function Radio(props){
 
 	var optionsList = answerOptions.map((option) =>
 			<div>
-				<input type="radio" id={option.title} name={props.id} value={option.title} className=""></input>
+				<input type="radio" id={option.title} name={props.id} value={option.title} className="mb-3"></input>
 				<label for={option.title} className="ml-5">{option.title} </label>
 			</div>
 		);
 
 	return(
 		<div>
-			<h1 className="my-5 text-xl w-full">{props.question}</h1>
+			<h1 className="my-5 text-xl w-full font-display text-question">{props.question}</h1>
 			{optionsList}
 		</div>	
 		);

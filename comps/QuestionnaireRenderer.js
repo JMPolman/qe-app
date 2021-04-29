@@ -5,13 +5,15 @@ import DateType from '../comps/date'
 import Dropdown from '../comps/dropdown'
 import CheckBox from '../comps/checkbox'
 import Radio from '../comps/radio'
+import TimeType from '../comps/time'
+import RangeType from '../comps/range'
 
 function QuestionnaireRenderer(props){
 	const questionnaire = JSON.parse(props.content);
 
 	var list = questionnaire.map((questions) => 
 
-			<div className="w-full">
+			<div className="w-full mb-16">
 				{questions.type === "textfield" &&					
 					<TextField question={questions.title}  />
 				}
@@ -36,6 +38,14 @@ function QuestionnaireRenderer(props){
 					<Radio question={questions.title} id={questions.id} options={questions.options} />
 				}
 
+				{questions.type === "time" &&
+					<TimeType question={questions.title} id={questions.id} />
+				}
+
+				{questions.type === "range" &&
+					<RangeType question={questions.title} id={questions.id} min={questions.min} labels={questions.labels } max={questions.max} step={questions.step} />
+				}
+
 
 
 
@@ -47,7 +57,7 @@ function QuestionnaireRenderer(props){
 	);
 
 	return(
-			<div className="mt-10 w-full">
+			<div className="mt-10 w-full questions">
 				{/*<p>{list}</p>*/}
 				{list}
 			</div>	

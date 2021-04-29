@@ -11,7 +11,7 @@ module.exports = {
     	widest: '.30em',
     },
      boxShadow: {
-        center: '0 0 3px 0 rgba(0, 0, 0, 0.1),0 0 2px 0 rgba(0, 0, 0, 0.06)',
+        center: '0 0 3px 0 rgba(0, 0, 0, 0.10),0 0 2px 0 rgba(0, 0, 0, 0.06)',
     },
      colors: {
      	blue: '#00B1E9',
@@ -22,6 +22,17 @@ module.exports = {
        'primary': '#FFFFFF',
        'secondary': '#00B1E9',
        'danger': '#e3342f',
+       'question':'#232323',
+     },
+     backgroundColor: {
+        blue: '#00B1E9',
+        light: '#EAEFF3',
+        white: '#FFFFFF',
+     },
+     borderColor: {
+        blue: '#00B1E9',
+        light: '#EAEFF3',
+        white: '#FFFFFF',
      },
   },
   variants: {
