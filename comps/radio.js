@@ -1,14 +1,22 @@
-import react from 'react';
+import React from 'react'
+import styles from '../styles/Home.module.css'
 
-const Radio = () => {
-	return(
+function Radio(props){
 
+	const answerOptions = props.options;
+
+	var optionsList = answerOptions.map((option) =>
 			<div>
-				<h1>Question{question.title}</h1>
-				<input type='radio' value="ja"/>
-				<label htmlFor="ja"> Ja </label>
+				<input type="radio" id={option.title} name={props.id} value={option.title} className=""></input>
+				<label for={option.title} className="ml-5">{option.title} </label>
 			</div>
+		);
 
+	return(
+		<div>
+			<h1 className="my-5 text-xl w-full">{props.question}</h1>
+			{optionsList}
+		</div>	
 		);
 }
 
