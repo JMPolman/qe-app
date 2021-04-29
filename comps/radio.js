@@ -7,7 +7,7 @@ function Radio(props){
 
 	var optionsList = answerOptions.map((option) =>
 			<div>
-				<input type="radio" id={option.title} name={props.id} value={option.title} className="mb-3"></input>
+				<input type="radio" id={option.title} name={props.id} value={option.title} className="mb-3 text-secondary select:outline-none "></input>
 				<label for={option.title} className="ml-5">{option.title} </label>
 			</div>
 		);
