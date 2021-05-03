@@ -17,6 +17,9 @@ module.exports = {
      	blue: '#00B1E9',
      	light: '#EAEFF3',
      	white: '#FFFFFF',
+      UMOgreen: '#3baa34',
+      UMOblue: '#2370b8',
+      UMOpurple: '#662684',
   	},
   	textColor: {
        'primary': '#FFFFFF',

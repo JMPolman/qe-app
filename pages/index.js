@@ -5,33 +5,14 @@ import Radio from '../comps/radio'
 import JSONForm from '../comps/form'
 import render from 'react-dom'
 import {useState} from 'react'
+import Navbar from '../comps/Navbar'
 
 export default function Home() {
 
-  // const [visibility, setVisibility] = useState(false)
-
   return (
-
-     
-
-        <div className="mt-20" >
-
-          <div className="w-4/6 mx-auto">
+          <div>
               <JSONForm />
           </div>
-
-         {/* {
-
-            visibility &&
-            <Radio />
-
-          }*/}
-          
-
-          
-        </div>
-
-        
   )
 
 };

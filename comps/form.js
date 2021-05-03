@@ -2,6 +2,7 @@ import React from 'react'
 import QuestionnaireRenderer from '../comps/QuestionnaireRenderer'
 import {useState} from 'react'
 
+
 class JSONForm extends React.Component {
 
 	constructor(props) {
@@ -31,12 +32,12 @@ class JSONForm extends React.Component {
 
 	render() {
 		return(
-			<div className="w-full">
+			<div className="">
+
 				<form onSubmit={this.handleSubmit}>
 					
-
 		            {this.state.formVisible &&
-		            	<div>
+		            	<div className="w-6/12 mx-auto">
 		            		<textarea className="resize-y my-4 block w-full shadow-center p-2 rounded-md focus:outline-none" id="q-input" value={this.state.value} onChange={this.handleChange} />
 		            		<input type="submit" value="Submit" className="transition duration-200 ease-in bg-blue text-primary px-4 py-2 rounded-md hover:text-secondary hover:bg-white focus:outline-none cursor-pointer"/>
 		            	</div>

@@ -7,62 +7,65 @@ import CheckBox from '../comps/checkbox'
 import Radio from '../comps/radio'
 import TimeType from '../comps/time'
 import RangeType from '../comps/range'
+import Navbar from './Navbar'
 
 function QuestionnaireRenderer(props){
 	const questionnaire = JSON.parse(props.content);
+	var q = 1;
 
 	var list = questionnaire.map((questions) => 
-
+	
 			<div className="w-full mb-16">
 				{questions.type === "textfield" &&					
-					<TextField question={questions.title}  />
+					<TextField id={q++} question={questions.title}  />
 				}
 
 				{questions.type === "textarea" &&	
-					<TextArea question={questions.title}  />	
+					<TextArea id={q++} question={questions.title}  />	
 				}
 
 				{questions.type === "date" &&
-					<DateType question={questions.title} />
+					<DateType id={q++} question={questions.title} />
 				}
 
 				{questions.type === "dropdown" &&
-					<Dropdown question={questions.title} options={questions.options} />
+					<Dropdown id={q++} question={questions.title} options={questions.options} />
 				}
 
 				{questions.type === "checkbox" &&
-					<CheckBox question={questions.title} options={questions.options} />
+					<CheckBox id={q++} question={questions.title} options={questions.options} />
 				}
 
 				{questions.type === "radio" &&
-					<Radio question={questions.title} id={questions.id} options={questions.options} />
+					<Radio id={q++} question={questions.title} options={questions.options} />
 				}
 
 				{questions.type === "time" &&
-					<TimeType question={questions.title} id={questions.id} />
+					<TimeType id={q++} question={questions.title} />
 				}
 
 				{questions.type === "range" &&
-					<RangeType question={questions.title} id={questions.id} min={questions.min} labels={questions.labels } max={questions.max} step={questions.step} />
+					<RangeType id={q++} question={questions.title} min={questions.min} labels={questions.labels } max={questions.max} step={questions.step} />
 				}
 
-
-
-
-			{/*	<h1 className="mt-5">{questions.title}</h1>
-				<span>{questions.id}</span>
-				<span className="block">{questions.type}</span>*/}
 			</div>
 			
 	);
 
+	const n = list.length;
+
+
 	return(
-			<div className="mt-10 w-full questions">
-				{/*<p>{list}</p>*/}
+		<div>
+			<Navbar q={n}/>
+
+			<div className="mt-10 questions w-6/12 mx-auto mt-32">
 				{list}
 			</div>	
+		</div>	
 		);
 	
 }
+
 
 export default QuestionnaireRenderer;
