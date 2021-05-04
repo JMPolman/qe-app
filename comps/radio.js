@@ -4,7 +4,7 @@ function Radio(props){
 	const answerOptions = props.options;
 
 	var optionsList = answerOptions.map((option, i) =>
-			<div key={i} onChange={updateField}>
+			<div key={i}>
 				<input type="radio" id={option.title} name={props.id} value={option.title} className="form-radio mb-3 text-UMOblue border select:outline-none "></input>
 				<label htmlFor={option.title} className="ml-5">{option.title} </label>
 			</div>
