@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
 
 function Radio(props){
 
@@ -7,10 +6,10 @@ function Radio(props){
 
 	var nextQuestion = props.id + 1;
 
-	var optionsList = answerOptions.map((option) =>
-			<div>
+	var optionsList = answerOptions.map((option, i) =>
+			<div key={i}>
 				<input type="radio" id={option.title} name={props.id} value={option.title} className="mb-3 text-secondary select:outline-none "></input>
-				<label for={option.title} className="ml-5">{option.title} </label>
+				<label htmlFor={option.title} className="ml-5">{option.title} </label>
 			</div>
 		);
 

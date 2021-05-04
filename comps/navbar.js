@@ -3,7 +3,7 @@ import Link from 'next/link'
 function Navbar(props){
 
 	return(
-		<nav className="w-screen fixed top-0 left-0 p-5">
+		<nav className="w-screen bg-white fixed top-0 left-0 p-5">
 			<div className="w-8/12 mx-auto "> 
 				<Link href="/">
 					<a className="inline-flex">
@@ -16,8 +16,8 @@ function Navbar(props){
 
 	        	<div className="inline-flex h-full w-5/12 justify-end float-right">
 	        		
-	        		<div className="inline-flex bg-gradient-to-r mr-5 h-4 w-8/12">
-	        			<div className="w-5/12 bg-blue h-4">
+	        		<div className="inline-flex bg-gradient-to-r from-UMOgreen via-UMOblue to-UMOpurple mr-5 mt-2 h-2 w-8/12 rounded-md">
+	        			<div className="w-5/12 rounded-l-md h-2">
 	        				&nbsp;
 	        			</div>
 	        		</div>

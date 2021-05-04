@@ -10,10 +10,11 @@ function RangeType(props){
 
 	// console.log(i);
 
-	var stepsList = rangeSteps.map((label) => 
+	const stepsList = rangeSteps.map((label, i) => {
+		const val = Math.round(stepDistance * i + props.min)
 
-			<option value={Math.round(((stepDistance * i++)-stepDistance) - (props.max))} label={label} className="flex"> </option>
-		);
+		return <option key={i} value={val} label={label} className="flex"></option>
+	});
 
 	return(
 		<div id={props.id}>
