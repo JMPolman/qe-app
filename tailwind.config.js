@@ -26,6 +26,9 @@ module.exports = {
        'secondary': '#00B1E9',
        'danger': '#e3342f',
        'question':'#232323',
+       'UMOgreen': '#3baa34',
+       'UMOblue': '#2370b8',
+       'UMOpurple': '#662684',
      },
      backgroundColor: {
         blue: '#00B1E9',
@@ -36,15 +39,18 @@ module.exports = {
         blue: '#00B1E9',
         light: '#EAEFF3',
         white: '#FFFFFF',
+        UMOgreen: '#3baa34',
+        UMOblue: '#2370b8',
+        UMOpurple: '#662684',
      },
   },
   variants: {
     extend: {
       backgroundColor: ['checked'],
       borderColor: ['checked'],
-    },
+    }
   },
   plugins: [
-    // require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/custom-forms'),
   ],
 }

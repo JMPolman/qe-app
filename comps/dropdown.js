@@ -12,7 +12,7 @@ function Dropdown(props){
 		<div id={props.id}>
 			<h1 className="my-5 text-xl w-full font-display text-question">{props.question}</h1>
 
-			<select>
+			<select className="form-select border border-UMOblue rounded-sm mx-0">
 			{optionsList}
 			</select>
 			

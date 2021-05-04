@@ -8,15 +8,23 @@ import Radio from '../comps/radio'
 import TimeType from '../comps/time'
 import RangeType from '../comps/range'
 import Navbar from './Navbar'
+import {useState} from 'react'
 
-function QuestionnaireRenderer({ content }){
+function QuestionnaireRenderer({ content, random }){
 	const questionnaire = JSON.parse(content);
+
+	
+	if (random){
+		questionnaire.sort(() => Math.random() -0.5)
+	} 
+
+	const [active, setActive] = useState(false);
 
 	const list = questionnaire.map((questions, q) => 
 	
 			<div key={q} className="w-full mb-16">
 				{questions.type === "textfield" &&					
-					<TextField id={q} question={questions.title} />
+					<TextField id={q} question={questions.title} onUpdate={(value) => this.setState({answer, [q]: value}) } />
 				}
 
 				{questions.type === "textarea" &&	
@@ -36,7 +44,7 @@ function QuestionnaireRenderer({ content }){
 				}
 
 				{questions.type === "radio" &&
-					<Radio id={q} question={questions.title} options={questions.options} />
+					<Radio id={q} question={questions.title} options={questions.options} onUpdate={(value) => this.setState({answer, [q]: value}) }/>
 				}
 
 				{questions.type === "time" &&
@@ -53,15 +61,14 @@ function QuestionnaireRenderer({ content }){
 
 	const n = list.length;
 
-
 	return(
 		<div>
 			<Navbar q={n}/>
 
 			<div className="mt-10 questions w-6/12 mx-auto mt-32">
-				{/*<form>*/}
-					{list}
-				{/*</form>*/}	
+
+				{list}
+				
 			</div>	
 		</div>	
 		);

@@ -19,7 +19,7 @@ function RangeType(props){
 	return(
 		<div id={props.id}>
 			<h1 className="my-5 text-xl w-full font-display text-question">{props.question}</h1>
-			<input type="range" min={props.min} max={props.max} step={Math.round(stepDistance)} list={props.id} className="w-full"></input>
+			<input type="range" min={props.min} max={props.max} step={Math.round(stepDistance)} list={props.id} className="w-full focus:outline-none"></input>
 
 			<datalist id={props.id} className="flex justify-between w-100"> 
 				{stepsList}
