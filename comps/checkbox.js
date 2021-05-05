@@ -4,10 +4,10 @@ function CheckBox(props){
 
 	const answerOptions = props.options;
 
-	var optionsList = answerOptions.map((option) =>
-			<div >
-				<input type="checkbox" id={option.title} name={option.title} value={option.title} className="mb-3"></input>
-				<label for={option.title} className="ml-5"> {option.title}</label>
+	var optionsList = answerOptions.map((option, i) =>
+			<div key={i}>
+				<input type="checkbox" id={option.title} name={option.title} value={option.title} className="form-checkbox text-UMOblue rounded-sm border border-solid mb-3 mt-1"></input>
+				<label htmlFor={option.title} className="ml-5"> {option.title}</label>
 			</div>
 		);
 
