@@ -19,6 +19,7 @@ function QuestionnaireRenderer({ content, random }){
 	} 
 
 	const [active, setActive] = useState(false);
+	const [answers, setAnswers] = useState({});
 
 	const list = questionnaire.map((questions, q) => 
 	

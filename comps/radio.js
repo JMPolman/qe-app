@@ -1,18 +1,18 @@
 import React from 'react'
 
-function Radio(props){
-	const answerOptions = props.options;
+function Radio({options, question, id, onUpdate}){
+	const answerOptions = options;
 
 	var optionsList = answerOptions.map((option, i) =>
 			<div key={i}>
-				<input type="radio" id={option.title} name={props.id} value={option.title} className="form-radio mb-3 text-UMOblue border select:outline-none "></input>
+				<input type="radio" id={option.title} name={id} value={option.title} className="form-radio mb-3 text-UMOblue border select:outline-none "></input>
 				<label htmlFor={option.title} className="ml-5">{option.title} </label>
 			</div>
 		);
 
 	return(
-		<div id={props.id}>
-			<h1 className="my-5 text-xl w-full font-display text-question">{props.question}</h1>
+		<div id={id}>
+			<h1 className="my-5 text-xl w-full font-display text-question">{question}</h1>
 			{optionsList}
 		</div>	
 		);
