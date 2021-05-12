@@ -19,17 +19,16 @@ function QuestionnaireRenderer({ content, random }){
 	} 
 
 	const [active, setActive] = useState(false);
-	const [answers, setAnswers] = useState([]);
 
 	const list = questionnaire.map((questions, q) => 
 	
 			<div key={q} className="w-full mb-16">
 				{questions.type === "textfield" &&					
-					<TextField id={q} question={questions.title} onUpdate={onUpdate} />
+					<TextField id={q} question={questions.title} onUpdate={onUpdate} active={active} />
 				}
 
 				{questions.type === "textarea" &&	
-					<TextArea id={q} question={questions.title} onUpdate={onUpdate} />	
+					<TextArea id={q} question={questions.title} onUpdate={onUpdate} active={active} />	
 				}
 
 				{questions.type === "date" &&
@@ -61,19 +60,23 @@ function QuestionnaireRenderer({ content, random }){
 	);
 
 	const n = list.length;
+	const [answers, setAnswers] = useState(Array.from(Array(n), () =>{}));
 
+	// const answerArray = Array.from(Array(n), () => {});
 	
 
 	function onUpdate(value, questions, id){
 		const answer = value
+		const filledIn = true
+
 		const newAnswer = {
 			id,
+			filledIn,
 			answer
 		}
-		
 
 		const answersList = answers.slice()
-		answersList[id] = answer
+		answersList[id] = newAnswer
 		setAnswers(answersList)
 		
 		console.log(answers)
