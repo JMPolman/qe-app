@@ -1,11 +1,11 @@
 import React from 'react'
 
-function DateType(props){
+function DateType({id, question, onUpdate}){
 
 	return(
-		<div id={props.id}>
-			<h1 className="my-5 text-xl w-full font-display text-question">{props.question}</h1>
-			<input type="date"></input>
+		<div id={id}>
+			<h1 className="my-5 text-xl w-full font-display text-question">{question}</h1>
+			<input type="date" onChange={(event) => onUpdate(event.target.value, question)}></input>
 		</div>	
 		);
 }

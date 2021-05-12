@@ -19,33 +19,33 @@ function QuestionnaireRenderer({ content, random }){
 	} 
 
 	const [active, setActive] = useState(false);
-	const [answers, setAnswers] = useState({});
+	const [answers, setAnswers] = useState([]);
 
 	const list = questionnaire.map((questions, q) => 
 	
 			<div key={q} className="w-full mb-16">
 				{questions.type === "textfield" &&					
-					<TextField id={q} question={questions.title} onUpdate={(value) => this.setState({answer, [q]: value}) } />
+					<TextField id={q} question={questions.title} onUpdate={onUpdate} />
 				}
 
 				{questions.type === "textarea" &&	
-					<TextArea id={q} question={questions.title}  />	
+					<TextArea id={q} question={questions.title} onUpdate={onUpdate} />	
 				}
 
 				{questions.type === "date" &&
-					<DateType id={q} question={questions.title} />
+					<DateType id={q} question={questions.title} onUpdate={onUpdate} />
 				}
 
 				{questions.type === "dropdown" &&
-					<Dropdown id={q} question={questions.title} options={questions.options} />
+					<Dropdown id={q} question={questions.title} options={questions.options} onUpdate={onUpdate} />
 				}
 
 				{questions.type === "checkbox" &&
-					<CheckBox id={q} question={questions.title} options={questions.options} />
+					<CheckBox id={q} question={questions.title} options={questions.options} onUpdate={onUpdate} />
 				}
 
 				{questions.type === "radio" &&
-					<Radio id={q} question={questions.title} options={questions.options} onUpdate={(value) => this.setState({answer, [q]: value}) }/>
+					<Radio id={q} question={questions.title} options={questions.options} onUpdate={onUpdate} />
 				}
 
 				{questions.type === "time" &&
@@ -53,7 +53,7 @@ function QuestionnaireRenderer({ content, random }){
 				}
 
 				{questions.type === "range" &&
-					<RangeType id={q} question={questions.title} min={questions.min} labels={questions.labels } max={questions.max} step={questions.step} />
+					<RangeType id={q} question={questions.title} min={questions.min} labels={questions.labels } max={questions.max} step={questions.step} onUpdate={onUpdate} />
 				}
 
 			</div>
@@ -61,6 +61,23 @@ function QuestionnaireRenderer({ content, random }){
 	);
 
 	const n = list.length;
+
+	// const handleUpdate = (answer) => {setAnswers({...answers})}
+
+	function onUpdate(value, questions){
+		const newAnswer = {
+			question: questions,
+			answer: value
+		}
+
+		const newAnswers = [...answers, newAnswer];
+		setAnswers(newAnswers);
+
+		console.log(answers)
+	}
+
+	// console.log(handleUpdate);
+	
 
 	return(
 		<div>
