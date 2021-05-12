@@ -49,7 +49,7 @@ function QuestionnaireRenderer({ content, random }){
 				}
 
 				{questions.type === "time" &&
-					<TimeType id={q} question={questions.title} />
+					<TimeType id={q} question={questions.title} onUpdate={onUpdate} />
 				}
 
 				{questions.type === "range" &&
@@ -62,19 +62,24 @@ function QuestionnaireRenderer({ content, random }){
 
 	const n = list.length;
 
-	// const handleUpdate = (answer) => {setAnswers({...answers})}
+	
 
-	function onUpdate(value, questions){
+	function onUpdate(value, questions, id){
+		const answer = value
 		const newAnswer = {
-			question: questions,
-			answer: value
+			id,
+			answer
 		}
+		
 
-		const newAnswers = [...answers, newAnswer];
-		setAnswers(newAnswers);
-
+		const answersList = answers.slice()
+		answersList[id] = answer
+		setAnswers(answersList)
+		
 		console.log(answers)
 	}
+
+
 
 	// console.log(handleUpdate);
 	

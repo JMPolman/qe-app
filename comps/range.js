@@ -19,7 +19,7 @@ function RangeType({labels, id, question, max, min, onUpdate}){
 	return(
 		<div id={id}>
 			<h1 className="my-5 text-xl w-full font-display text-question">{question}</h1>
-			<input type="range" min={min} max={max} step={Math.round(stepDistance)} list={id} onChange={(event) => onUpdate(event.target.value, question)}  className="w-full focus:outline-none"></input>
+			<input type="range" min={min} max={max} step={Math.round(stepDistance)} list={id} onChange={(event) => onUpdate(event.target.value, question, id)}  className="w-full focus:outline-none"></input>
 
 			<datalist id={id} className="flex justify-between w-100"> 
 				{stepsList}

@@ -12,7 +12,7 @@ function Dropdown({options, id, question, onUpdate}){
 		<div id={id}>
 			<h1 className="my-5 text-xl w-full font-display text-question">{question}</h1>
 
-			<select onChange={(event) => onUpdate(event.target.value, question)} className="form-select border border-UMOblue rounded-sm mx-0">
+			<select onChange={(event) => onUpdate(event.target.value, question, id)} className="form-select border border-UMOblue rounded-sm mx-0">
 			{optionsList}
 			</select>
 			

@@ -6,7 +6,7 @@ function CheckBox({options, id, question, onUpdate}){
 
 	var optionsList = answerOptions.map((option, i) =>
 			<div key={i}>
-				<input type="checkbox" id={option.title} name={option.title} value={option.title} onChange={(event) => onUpdate(event.target.value, question)} className="form-checkbox text-UMOblue rounded-sm border border-solid mb-3 mt-1"></input>
+				<input type="checkbox" id={option.title} name={option.title} value={option.title} onChange={(event) => onUpdate(event.target.value, question, id)} className="form-checkbox text-UMOblue rounded-sm border border-solid mb-3 mt-1"></input>
 				<label htmlFor={option.title} className="ml-5"> {option.title}</label>
 			</div>
 		);
