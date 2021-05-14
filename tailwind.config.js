@@ -47,6 +47,9 @@ module.exports = {
         UMOblue: '#2370b8',
         UMOpurple: '#662684',
      },
+     transitionProperty: {
+                'width': 'width'
+            },
   },
   variants: {
     extend: {
