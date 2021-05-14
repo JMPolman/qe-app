@@ -1,7 +1,18 @@
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import {useState} from 'react'
 
-function Navbar(props){
+function Navbar({q, currentQ}){
+
+	const qID = currentQ + 1
+	const stepSize = 12 / q
+	const progress = stepSize * qID
+	const calcSize = Math.round(12 - progress)
+	const [full, setFull] = useState()
+
+	const calc =  calcSize + "/12"
+
+	console.log(progress)
 
 	return(
 		<nav className="w-screen fixed top-0 bg-white left-0 p-5">
@@ -18,12 +29,12 @@ function Navbar(props){
 	        	<div className="inline-flex h-full w-5/12 justify-end float-right mt-3">
 	        		
 	        		<div className="inline-flex justify-end bg-gradient-to-r from-UMOgreen via-UMOblue to-UMOpurple mr-5 h-2 w-8/12 rounded-md mt-2">
-	        			<div className="w-2/12  bg-light h-full clipwacsd rounded-r-md ">
+	        			<div className={"w-" +(full ? "0" : calc) +" bg-light h-full clipwacsd rounded-r-md"}>
 	        				&nbsp;
 	        			</div>
 	        		</div>
 
-	        		<p>Vraag x / {props.q}</p>
+	        		<p>Vraag {currentQ + 1} / {q}</p>
 	        		
 	        	</div>
         	</div>
