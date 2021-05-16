@@ -123,7 +123,7 @@ function QuestionnaireRenderer({ content, random }){
 		{((n - newLast) === 0) && finishedQuestions()}
 
 		function finishedQuestions(){
-			console.log('finished')
+			alert('finished')
 		}
 
 

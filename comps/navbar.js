@@ -8,9 +8,14 @@ function Navbar({q, currentQ}){
 	const stepSize = 12 / q
 	const progress = stepSize * qID
 	const calcSize = Math.round(12 - progress)
-	const [full, setFull] = useState()
+	var full = false
 
 	const calc =  calcSize + "/12"
+
+	if (calcSize === 0){
+		full = true
+	}
+
 
 	console.log(progress)
 
