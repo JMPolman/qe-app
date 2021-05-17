@@ -148,7 +148,6 @@ function QuestionnaireRenderer({ content, random }){
 
 
 	// console.log(handleUpdate);
-	// console.log(questionID)
 	
 
 	return(
