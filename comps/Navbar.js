@@ -33,7 +33,7 @@ function Navbar({q, currentQ}){
 	        	<div className="inline-flex h-full w-5/12 justify-end float-right mt-3">
 	        		
 	        		<div className="inline-flex justify-end bg-gradient-to-r from-UMOgreen via-UMOblue to-UMOpurple mr-5 h-2 w-8/12 rounded-md mt-2">
-	        			<div className={{full ? 'w-0' : 'w-'+calc} +" bg-light h-full clipwacsd rounded-r-md transition-width ease-in duration-300"}>
+	        			<div className={(full ? 'w-0' : 'w-'+calc) +" bg-light h-full clipwacsd rounded-r-md transition-width ease-in duration-300"}>
 	        				&nbsp;
 	        			</div>
 	        		</div>
