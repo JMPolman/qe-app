@@ -123,7 +123,7 @@ function QuestionnaireRenderer({ content, random }){
 		{((n - newLast) === 0) && finishedQuestions()}
 
 		function finishedQuestions(){
-			alert('finished')
+			alert('Bedankt voor het invullen van deze vragenlijst, u kunt het venster nu sluiten.')
 		}
 
 
