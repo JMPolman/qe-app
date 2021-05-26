@@ -2,9 +2,13 @@ import React from 'react'
 
 function DateType({id, question, onUpdate}){
 	const today = new Date()
-	const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	const day = today.getDate()
+	const month = today.getMonth()+1
+	const dd = day < 10 ? '0' + day : day
+	const mm = month <10 ? '0' + month : month
+	const yyyy = today.getFullYear();
+	const date = yyyy+'-'+mm+'-'+dd
 
-	console.log(date);
 	return(
 		<div id={id}>
 			<h1 className="my-5 text-xl w-full font-display text-question">{question}</h1>
