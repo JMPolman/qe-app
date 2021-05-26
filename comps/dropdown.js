@@ -1,18 +1,18 @@
 import React from 'react'
 
-function Dropdown(props){
+function Dropdown({options, id, question, onUpdate}){
 
-	const answerOptions = props.options;
+	const answerOptions = options;
 
 	var optionsList = answerOptions.map((option, i) =>
 			<option key={i} value={option.title}>{option.title}</option>
 		);
 
 	return(
-		<div id={props.id}>
-			<h1 className="my-5 text-xl w-full font-display text-question">{props.question}</h1>
+		<div id={id}>
+			<h1 className="my-5 text-xl w-full font-display text-question">{question}</h1>
 
-			<select>
+			<select onChange={(event) => onUpdate(event.target.value, question, id)} className="form-select border border-UMOblue rounded-sm mx-0">
 			{optionsList}
 			</select>
 			

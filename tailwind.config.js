@@ -1,5 +1,10 @@
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  purge: { 
+    content: ['./pages/**/*.{js,ts,jsx,tsx}', './comps/**/*.{js,ts,jsx,tsx}'],
+    options: {
+      safelist: ['w-0', 'w-1/12', 'w-2/12', 'w-3/12', 'w-4/12', 'w-5/12', 'w-6/12', 'w-7/12', 'w-8/12', 'w-9/12', 'w-10/12', 'w-11/12', 'w-12/12'],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -20,14 +25,21 @@ module.exports = {
       UMOgreen: '#3baa34',
       UMOblue: '#2370b8',
       UMOpurple: '#662684',
+      white: '#ffffff',
   	},
   	textColor: {
        'primary': '#FFFFFF',
        'secondary': '#00B1E9',
        'danger': '#e3342f',
        'question':'#232323',
+       'UMOgreen': '#3baa34',
+       'UMOblue': '#2370b8',
+       'UMOpurple': '#662684',
      },
      backgroundColor: {
+       'UMOgreen': '#3baa34',
+       'UMOblue': '#2370b8',
+       'UMOpurple': '#662684',
         blue: '#00B1E9',
         light: '#EAEFF3',
         white: '#FFFFFF',
@@ -36,15 +48,21 @@ module.exports = {
         blue: '#00B1E9',
         light: '#EAEFF3',
         white: '#FFFFFF',
+        UMOgreen: '#3baa34',
+        UMOblue: '#2370b8',
+        UMOpurple: '#662684',
      },
+     transitionProperty: {
+                'width': 'width'
+            },
   },
   variants: {
     extend: {
       backgroundColor: ['checked'],
       borderColor: ['checked'],
-    },
+    }
   },
   plugins: [
-    // require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/custom-forms'),
   ],
 }
