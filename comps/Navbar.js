@@ -19,26 +19,25 @@ function Navbar({q, currentQ}){
 	console.log(progress)
 
 	return(
-		<nav className="w-screen fixed top-0 bg-white left-0 p-5">
-			<div className="w-8/12 mx-auto "> 
+		<nav className="w-screen fixed top-0 bg-white left-0 p-5 pt-8 lg:p-5">
+			<div className="lg:w-8/12 mx-auto "> 
 				<Link href="/">
 					<a className="inline-flex">
-						<div className="inline-flex w-40">
+						<div className="inline-flex w-32 lg:w-40">
 	          				<img src="umo-color.png" className="object-scale-down"></img>
-	          				{/*<span className="font-display uppercase font-light pl-16 text-3xl my-auto tracking-widest"> Researchable</span>*/}
 	        			</div>
 	        		</a>
 	        	</Link>
 
-	        	<div className="inline-flex h-full w-5/12 justify-end float-right mt-3">
+	        	<div className="lg:inline-flex h-full w-6/12 lg:w-5/12 justify-end float-right mt-3">
 	        		
-	        		<div className="inline-flex justify-end bg-gradient-to-r from-UMOgreen via-UMOblue to-UMOpurple mr-5 h-2 w-8/12 rounded-md mt-2">
+	        		<div className="inline-flex justify-end bg-gradient-to-r from-UMOgreen via-UMOblue to-UMOpurple mr-5 h-2 w-10/12 lg:w-8/12 rounded-md mt-2">
 	        			<div className={(full ? 'w-0' : 'w-'+calc) +" bg-light h-full rounded-r-md transition-width ease-in duration-300"}>
 	        				&nbsp;
 	        			</div>
 	        		</div>
 
-	        		<p>Vraag {currentQ + 1} / {q}</p>
+	        		<p className="lg:inline-flex lg:relative lg:top-auto lg:right-auto absolute top-5 right-16 ">Vraag {currentQ + 1} / {q}</p>
 	        		
 	        	</div>
         	</div>

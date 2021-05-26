@@ -9,6 +9,7 @@ import TimeType from '../comps/time'
 import RangeType from '../comps/range'
 import SubmitBtn from '../comps/submitbtn'
 import Navbar from './Navbar'
+import EndMessage from '../comps/endmessage'
 import {useState} from 'react'
 import {useRef} from 'react'
 
@@ -24,12 +25,13 @@ function QuestionnaireRenderer({ content, random }){
 	const [showFirst, setFirst] = useState(0)
 	const [showLast, setLast] = useState(6)
 	const [questionID, setID] = useState(0)
+	const [showEnd, setShowEnd] =useState(false);
 
 	const list = questionnaire.map((questions, q) => 
 	
 			<div key={q} className="w-full mb-16">
 				{questions.type === "textfield" &&					
-					<TextField id={q} refAnchor={useRef(q)} question={questions.title} onUpdate={onUpdate} active={active} />
+					<TextField id={q} refAnchor={useRef(q) } question={questions.title} onUpdate={onUpdate} active={active} />
 				}
 
 				{questions.type === "textarea" &&	
@@ -65,8 +67,6 @@ function QuestionnaireRenderer({ content, random }){
 	);
 
 	const n = list.length;
-
-	const submit = <SubmitBtn submitAnswers={submitAnswer} max={n} first={showFirst} last={showLast} list={list} />
 
 	const showList = setList(showFirst, showLast, list)
 
@@ -123,13 +123,12 @@ function QuestionnaireRenderer({ content, random }){
 		{((n - newLast) === 0) && finishedQuestions()}
 
 		function finishedQuestions(){
-			alert('Bedankt voor het invullen van deze vragenlijst, u kunt het venster nu sluiten.')
+			// alert('Bedankt voor het invullen van deze vragenlijst, u kunt het venster nu sluiten.')
+			setShowEnd(true)
 		}
 
 
 	}
-
-
 
 	function setList(showFirst, showLast, list){
 			const first = showFirst
@@ -145,24 +144,18 @@ function QuestionnaireRenderer({ content, random }){
 			)
 	}
 
-
-
-	// console.log(handleUpdate);
-	// console.log()
-	
-
 	return(
 		<div>
 			<Navbar q={n} currentQ={questionID}/>
 
 
-			<div className="my-10 questions w-6/12 mx-auto mt-32">
-				
+			<div className="my-10 questions lg:w-6/12 mx-auto mt-32">
+				<EndMessage isVisible={showEnd}/>
 				{showList}
 				
 			</div>
 
-				{submit}	
+				<SubmitBtn isVisible={showEnd} submitAnswers={submitAnswer} max={n} first={showFirst} last={showLast} list={list} />	
 
 		</div>	
 		);
