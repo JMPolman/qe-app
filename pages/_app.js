@@ -1,4 +1,4 @@
-import Layout from '../comps/Layout'
+import Layout from '../comps/templates/Layout'
 import '../styles/globals.css'
 
 

@@ -1,0 +1,164 @@
+[{
+	"id": "v1",
+	"type": "textfield",
+	"title": "Wat is je naam?"
+},
+ {
+	"id": "v2",
+	"type": "dropdown",
+	"title": "Wat is je geslacht?",
+	"options": [{
+		"title": "Vrouw"
+	}, {
+		"title": "Man"
+	}, {
+		"title": "Zeg ik liever niet"
+	}]
+},
+{
+	"id": "v3",
+	"type": "number",
+	"title": "Wat is je leeftijd?",
+	"min": "0",
+	"max": "100",
+	"placeholder": "Leeftijd in jaren"
+},
+{
+	"id": "v4",
+	"type": "radio",
+	"title": "Heb je deze week gesport?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}]
+},
+{
+	"id": "v5",
+	"type": "radio",
+	"title": "Heb je last gehad van blessures?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}],
+	"showOnlyIf": [{"4" : "Ja"}]
+},
+{
+	"id": "v6",
+	"type": "textfield",
+	"title": "Waar heb je last van (gehad)?",
+	"showOnlyIf": [{"5" : "Ja"}]
+},
+ {
+	"id": "v7",
+	"type": "range",
+	"title": "Hoe zwaar is/was je blessure",
+	"labels": ["Zeer zwaar", "Enigszins zwaar", "Enigszins licht ", "Zeer licht"],
+	"min": "0",
+	"max": "100",
+	"step": "1",
+	"showOnlyIf": [{"5" : "Ja"}]
+},
+{
+	"id": "v8",
+	"type": "radio",
+	"title": "Heb je fysiotherapie nodig om te herstellen van je blessure?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}],
+	"showOnlyIf": [{"5" : "Ja"}]
+},
+ {
+	"id": "v9",
+	"type": "checkbox",
+	"title": "Op welk(e) moment(en) heb je gesport?",
+	"options": [{
+		"title": "Ochtend"
+	}, {
+		"title": "Middag"
+	}, {
+		"title": "Avond"
+	}],
+	"showOnlyIf": [{"4" : "Ja"}]
+},
+{
+	"id": "v10",
+	"type": "radio",
+	"title": "Heb je deze week voldoende gegeten",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}]
+},
+{
+	"id": "v11",
+	"type": "dropdown",
+	"title": "Hoeveel calorieën heb je gemiddeld per dag binnen gekregen?",
+	"options": [{
+		"title": "<1000 kcal"
+	}, {
+		"title": "1000 - 1500 kcal"
+	}, {
+		"title": "1500 - 2000 kcal"
+	}, {
+		"title": "2000 - 2500 kcal"
+	}, {
+		"title": ">2500 kcal"
+	}],
+	"showOnlyIf": [{"10" : "Nee"}]
+},
+{
+	"id": "v12",
+	"type": "radio",
+	"title": "Heb je deze week voldoende geslapen?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}]
+},
+{
+	"id": "v13",
+	"type": "number",
+	"title": "Hoelang heb je deze week per nacht gemiddeld geslapen?",
+	"min": "1",
+	"max": "12",
+	"placeholder": "Slaap in uren"
+},
+{
+	"id": "v14",
+	"type": "time",
+	"title": "Hoelaat ben je deze week gemiddeld gaan slapen?"
+},
+{
+	"id": "v15",
+	"type": "range",
+	"title": "Hoe zou je de kwaliteit van je slaap deze week beoordelen?",
+	"labels": ["Zeer slecht", "Enigszins slecht", "Enigszins goed ", "Zeer goed"],
+	"min": "0",
+	"max": "100",
+	"step": "1"
+},
+{
+	"id": "v16",
+	"type": "radio",
+	"title": "Wil je in de toekomst benaderd worden voor meer vragenlijsten?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}]
+},
+{
+	"id": "v17",
+	"type": "textfield",
+	"title": "Naar welk emailadres mogen we deze vragenlijsten sturen?",
+	"placeholder": "E-mailadres",
+	"showOnlyIf": [{"16" : "Ja"}]
+}
+]
+

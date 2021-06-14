@@ -7,7 +7,12 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'welcomeUMO': "url('../public/bg_welcomeUMO.svg')",
+        'welcomeSDV': "url('../public/bg_welcomeSDV.gif')",
+      })
+    },
     fontFamily: {
     	'display': ['Roboto', 'sans-serif'],
        	'body': ['Open Sans', 'sans-serif'],
@@ -19,38 +24,33 @@ module.exports = {
         center: '0 0 3px 0 rgba(0, 0, 0, 0.10),0 0 2px 0 rgba(0, 0, 0, 0.06)',
     },
      colors: {
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)',
+      tertiary: 'var(--color-tertiary)',
      	blue: '#00B1E9',
      	light: '#EAEFF3',
      	white: '#FFFFFF',
-      UMOgreen: '#3baa34',
-      UMOblue: '#2370b8',
-      UMOpurple: '#662684',
-      white: '#ffffff',
   	},
   	textColor: {
-       'primary': '#FFFFFF',
-       'secondary': '#00B1E9',
-       'danger': '#e3342f',
-       'question':'#232323',
-       'UMOgreen': '#3baa34',
-       'UMOblue': '#2370b8',
-       'UMOpurple': '#662684',
-     },
-     backgroundColor: {
-       'UMOgreen': '#3baa34',
-       'UMOblue': '#2370b8',
-       'UMOpurple': '#662684',
-        blue: '#00B1E9',
-        light: '#EAEFF3',
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)',
+      tertiary: 'var(--color-tertiary)',
         white: '#FFFFFF',
+    },
+     backgroundColor: {
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)',
+      tertiary: 'var(--color-tertiary)',
+        white: '#FFFFFF',
+        light: '#f9f9f9'
      },
      borderColor: {
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)',
+      tertiary: 'var(--color-tertiary)',
         blue: '#00B1E9',
         light: '#EAEFF3',
         white: '#FFFFFF',
-        UMOgreen: '#3baa34',
-        UMOblue: '#2370b8',
-        UMOpurple: '#662684',
      },
      transitionProperty: {
                 'width': 'width'

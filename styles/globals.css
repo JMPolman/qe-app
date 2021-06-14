@@ -1,4 +1,30 @@
+:root {
+  --color-primary: #2370b8;
+  --color-secondary: #3baa34;
+  --color-tertiary:  #662684;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .scroll-snap-none {
+      scroll-snap-type: none;
+    }
+    .scroll-snap-x {
+      scroll-snap-type: x;
+    }
+    .scroll-snap-y {
+      scroll-snap-type: y mandatory;
+    }
+    .scroll-snap-align-center{
+    	scroll-snap-align:  center;	
+    }
+    .scroll-snap-stop-always{
+    	scroll-snap-stop:  always;
+    }
+  }
+}
 

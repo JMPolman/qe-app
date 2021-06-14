@@ -1,0 +1,138 @@
+[{
+	"id": "v1",
+	"type": "textfield",
+	"title": "Wat is je naam?"
+}, {
+	"id": "v2",
+	"type": "checkbox",
+	"title": "Vink je antwoorden aan",
+	"options": [{
+		"title": "Antwoord 1"
+	}, {
+		"title": "Antwoord 2"
+	}, {
+		"title": "Antwoord 3"
+	}, {
+		"title": "Ik heb voldoende gegeten"
+	}, {
+		"title": "De tijd vliegt voorbij"
+	}],
+	"show_otherwise": false
+}, {
+	"id": "v3",
+	"type": "textarea",
+	"title": "Beschrijf in 300 woorden hoe jouw ideale dag er uit ziet"
+}, {
+	"id": "v4",
+	"type": "dropdown",
+	"title": "Kies 1 van deze opties om een antwoord te geven",
+	"options": [{
+		"title": "Geel"
+	}, {
+		"title": "Blauw"
+	}, {
+		"title": "Groen"
+	}, {
+		"title": "Roze"
+	}, {
+		"title": "Paars"
+	}, {
+		"title": "Oranje"
+	}]
+}, {
+	"id": "v5",
+	"type": "radio",
+	"title": "Ja of nee? Misschien of Zeker?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}],
+	"showOnlyIf": [{"4" : "Groen"}]
+}, {
+	"id": "v6",
+	"type": "date",
+	"title": "Op welke datum ben je geboren?",
+	"showOnlyIf": [{"5" : "Ja"}]
+}, {
+	"id": "v7",
+	"type": "time",
+	"title": "Hoeveel tijd spendeer je gemiddeld zittend?",
+	"showOnlyIf": [{"6" : "2021-06-07"}]
+}, {
+	"id": "v8",
+	"type": "range",
+	"title": "Eens of oneens? Slide!",
+	"labels": ["Eens", "Not very", "Slightly ", "Oneens"],
+	"min": "0",
+	"max": "100",
+	"step": "1"
+},
+{
+	"id": "v9",
+	"type": "textfield",
+	"title": "Wat is je naam"
+}, {
+	"id": "v10",
+	"type": "checkbox",
+	"title": "Vink aan wat toepasselijk is op jouw dag vandaag",
+	"options": [{
+		"title": "Ik heb een topdag"
+	}, {
+		"title": "Ik ben vroeg opgestaan"
+	}, {
+		"title": "Mijn dag heeft zin "
+	}, {
+		"title": "Ik heb voldoende gegeten"
+	}, {
+		"title": "De tijd vliegt voorbij"
+	}],
+	"showOnlyIf": [{"4" : "Paars"},{"2" : "Antwoord 1"}]
+}, {
+	"id": "v11",
+	"type": "textarea",
+	"title": "Beschrijf in 300 woorden hoe jouw ideale dag er uit ziet"
+}, {
+	"id": "v12",
+	"type": "dropdown",
+	"title": "Kies 1 van deze opties om een antwoord te geven",
+	"options": [{
+		"title": "Geel"
+	}, {
+		"title": "Blauw"
+	}, {
+		"title": "Groen"
+	}, {
+		"title": "Roze"
+	}, {
+		"title": "Paars"
+	}, {
+		"title": "Oranje"
+	}]
+}, {
+	"id": "v13",
+	"type": "radio",
+	"title": "Ja of nee?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}]
+}, {
+	"id": "v14",
+	"type": "date",
+	"title": "Op welke datum ben je geboren?"
+}, {
+	"id": "v15",
+	"type": "time",
+	"title": "Hoeveel tijd spendeer je gemiddeld zittend?"
+}, {
+	"id": "v16",
+	"type": "range",
+	"title": "Eens of oneens? Slide!",
+	"labels": ["Eens", "Not very", "Slightly ", "Oneens"],
+	"min": "0",
+	"max": "100",
+	"step": "1"
+}
+]

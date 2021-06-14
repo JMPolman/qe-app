@@ -1,0 +1,117 @@
+[{
+	"id": "v1",
+	"type": "textfield",
+	"title": "Wat is je naam?"
+},
+ {
+	"id": "v2",
+	"type": "dropdown",
+	"title": "Wat is je geslacht?",
+	"options": [{
+		"title": "Vrouw"
+	}, {
+		"title": "Man"
+	}, {
+		"title": "Zeg ik liever niet"
+	}]
+},
+{
+	"id": "v3",
+	"type": "number",
+	"title": "Wat is je leeftijd?",
+	"min": "0",
+	"max": "100",
+	"placeholder": "Leeftijd in jaren"
+},
+{
+	"id": "v4",
+	"type": "radio",
+	"title": "Welk vervoersmiddel heb je over het afgelopen jaar het meest gebruikt?",
+	"options": [{
+		"title": "Auto"
+	}, {
+		"title": "Motor"
+	}, {
+		"title": "Scooter"
+	}, {
+		"title": "Fiets"
+	}, {
+		"title": "Elektrische fiets"
+	}, {
+		"title": "Brommer"
+	},{
+		"title": "Openbaar vervoer(bus, trein, tram etc.)"
+	}, {
+		"title": "Geen van bovenstaande"
+	}]
+},
+{
+	"id": "v5",
+	"type": "number",
+	"title": "Hoeveel heb je ongeveer gereden in het afgelopen jaar?",
+	"min": "0",
+	"max": "100000",
+	"placeholder": "Afstand in kilometers",
+	"showOnlyIf": [{"4" : "Auto"} ]
+},
+{
+	"id": "v6",
+	"type": "number",
+	"title": "Hoeveel heb je ongeveer gereden in het afgelopen jaar?",
+	"min": "0",
+	"max": "100000",
+	"placeholder": "Afstand in kilometers",
+	"showOnlyIf": [{"4" : "Motor"} ]
+}, {
+	"id": "v7",
+	"type": "number",
+	"title": "Hoeveel geld ben je gemiddeld per maand kwijt aan je auto?",
+	"min": "0",
+	"max": "2000",
+	"placeholder": "Bedrag in euro",
+	"showOnlyIf": [{"4" : "Auto"} ]
+},
+{
+	"id": "v8",
+	"type": "radio",
+	"title": "Zou je overwegen meer met het Openbaar Vervoer te reizen wanneer dit goedkoper is dan het eigen vervoersmiddel?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}],
+	"showOnlyIf": [{"4" : "Auto"} ]
+},
+{
+	"id": "v9",
+	"type": "textarea",
+	"title": "Wat moet er veranderen aan het Openbaar Vervoer om het voor jou interresanter te maken?",
+	"showOnlyIf": [{"8" : "Nee"} ]
+},
+ {
+	"id": "v10",
+	"type": "range",
+	"title": "Wat vind je van de verkeersveiligheid in jouw stad/dorp?",
+	"labels": ["Zeer onveilig", "Enigszins onveilig", "Neutraal" , "Enigszins veilig ", "Zeer veilig"],
+	"min": "0",
+	"max": "100",
+	"step": "1"
+},
+{
+	"id": "v11",
+	"type": "radio",
+	"title": "Wil je in de toekomst benaderd worden voor meer vragenlijsten?",
+	"options": [{
+		"title": "Ja"
+	}, {
+		"title": "Nee"
+	}]
+},
+{
+	"id": "v12",
+	"type": "textfield",
+	"title": "Naar welk emailadres mogen we deze vragenlijsten sturen?",
+	"placeholder": "E-mailadres",
+	"showOnlyIf": [{"11" : "Ja"}]
+}
+]
